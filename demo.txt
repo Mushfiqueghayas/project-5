@@ -3,3 +3,4 @@ a new line added
 new line added to the feature branch
 2nd line added to feature branch
 3rd line added to feature branch
+4th line added to feature branch
