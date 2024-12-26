@@ -1,7 +1,7 @@
 pipeline {
     agent {
         docker {
-            image 'maven:3.8.3-openjdk-11' // Maven image with Java 11
+            image 'maven:3.9.9-eclipse-temurin-21'
             args '--user root -v /var/run/docker.sock:/var/run/docker.sock' // Mount Docker socket
         }
     }
