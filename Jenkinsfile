@@ -1,4 +1,4 @@
-peline {
+pipeline {
     agent {
         docker {
             image 'maven:3.8.8-openjdk-11' // Maven image with Java 11
