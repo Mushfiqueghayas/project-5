@@ -59,7 +59,7 @@ peline {
                 sh '''
                 docker stop my-java-app || true
                 docker rm my-java-app || true
-                docker run -d --name my-java-app -p 8080:8080 ${DOCKER_IMAGE}
+                docker run -d --name my-java-app -p 8081:8080 ${DOCKER_IMAGE}
                 '''
             }
         }
