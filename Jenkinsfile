@@ -30,12 +30,7 @@ pipeline {
             }
         }
 
-        stage('Build') {
-            steps {
-                // Clean and build the Java project using Maven
-                sh 'mvn clean package'
-            }
-        }
+    
 
         stage('Docker Build') {
             steps {
@@ -53,7 +48,7 @@ pipeline {
             }
         }
 
-        stage('Deploy') {
+        stage('Docker Deploy') {
             steps {
                 // Stop and remove any existing container, then run the new one
                 sh '''
