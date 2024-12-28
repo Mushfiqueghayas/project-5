@@ -2,7 +2,7 @@ pipeline {
     agent {
         docker {
             image 'docker:20.10.8'
-            // args '--user root -v /var/run/docker.sock:/var/run/docker.sock' // Mount Docker socket
+            args '--user root -v /var/run/docker.sock:/var/run/docker.sock' // Mount Docker socket
         }
     }
 
