@@ -11,7 +11,7 @@ pipeline {
         DOCKER_CREDENTIALS_ID = 'dockerhub-cred'
         GITHUB_CREDENTIALS_ID = 'github-cred'
         // DOCKER_IMAGE = 'your-dockerhub-username/your-repository'
-	DOCKER_IMAGE = 'mushfiqueghayas/project-5:${BUILD_NUMBER}'
+	DOCKER_IMAGE = "mushfiqueghayas/project-5:${BUILD_NUMBER}"
     }
 
     stages {
@@ -35,7 +35,7 @@ pipeline {
         stage('Docker Build') {
             steps {
                 // Build a Docker image using the Dockerfile
-                sh 'docker build -t ${DOCKER_IMAGE} .'
+                sh "docker build -t ${DOCKER_IMAGE} ."
             }
         }
 
@@ -43,7 +43,7 @@ pipeline {
             steps {
                 // Log in to Docker Hub and push the image
                 withDockerRegistry([credentialsId: DOCKER_CREDENTIALS_ID, url: 'https://index.docker.io/v1/']) {
-                    sh 'docker push ${DOCKER_IMAGE}'
+                    sh "docker push ${DOCKER_IMAGE}"
                 }
             }
         }
@@ -51,11 +51,11 @@ pipeline {
         stage('Docker Deploy') {
             steps {
                 // Stop and remove any existing container, then run the new one
-                sh '''
+                sh """
                 docker stop my-java-app || true
                 docker rm my-java-app || true
                 docker run -d --name my-java-app -p 8081:8080 ${DOCKER_IMAGE}
-                '''
+                """
             }
         }
     }
