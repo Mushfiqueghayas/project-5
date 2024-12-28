@@ -11,7 +11,7 @@ pipeline {
         DOCKER_CREDENTIALS_ID = 'dockerhub-cred'
         GITHUB_CREDENTIALS_ID = 'github-cred'
         // DOCKER_IMAGE = 'your-dockerhub-username/your-repository'
-		DOCKER_IMAGE = 'mushfiqueghayas/project-5:${BUILD_NUMBER}'
+	DOCKER_IMAGE = 'mushfiqueghayas/project-5:${BUILD_NUMBER}'
     }
 
     stages {
