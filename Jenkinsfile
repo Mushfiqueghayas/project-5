@@ -9,7 +9,7 @@ pipeline {
     environment {
         // Replace with Jenkins credentials IDs
         DOCKER_CREDENTIALS_ID = 'dockerhub-cred'
-        GITHUB_CREDENTIALS_ID = 'github-cred'
+        GITHUB_TOKEN = credentials('github-cred')
         // DOCKER_IMAGE = 'your-dockerhub-username/your-repository'
 	DOCKER_IMAGE = "mushfiqueghayas/project-5:${BUILD_NUMBER}"
     }
@@ -23,7 +23,7 @@ pipeline {
                     branches: [[name: '*/main']],
                     userRemoteConfigs: [[
                         url: 'https://github.com/Mushfiqueghayas/project-5.git',
-                        credentialsId: GITHUB_CREDENTIALS_ID
+                        credentialsId: GITHUB_TOKEN
 						
                     ]]
                 ])
