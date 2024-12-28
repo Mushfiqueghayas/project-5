@@ -1,8 +1,8 @@
 pipeline {
     agent {
         docker {
-            image 'maven:3.8.3-openjdk-17'
-            args '--user root -v /var/run/docker.sock:/var/run/docker.sock' // Mount Docker socket
+            image 'docker:20.10.8'
+            // args '--user root -v /var/run/docker.sock:/var/run/docker.sock' // Mount Docker socket
         }
     }
 
